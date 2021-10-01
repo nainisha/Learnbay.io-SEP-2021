@@ -1,0 +1,24 @@
+//Remove Element  https://leetcode.com/problems/remove-element/description/
+class Solution {
+    public int removeElement(int[] nums, int val) {
+       if(nums == null || nums.length == 0)
+            return 0;
+       int i=nums.length-1;
+        int count=i;
+        while(i>=0){
+            if(nums[i]==val){
+                nums[i]=nums[count];
+                count--;
+                i--;
+            }
+            else{
+                i--;
+            }
+        }
+        return count+1;
+    }
+    
+    
+    
+
+}

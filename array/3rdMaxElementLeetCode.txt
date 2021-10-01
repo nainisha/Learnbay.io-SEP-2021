@@ -1,0 +1,18 @@
+//https://leetcode.com/problems/third-maximum-number/description/
+class Solution {
+    public int thirdMax(int[] nums) {
+        
+       Set<Integer> distinctSet = new HashSet<Integer>();
+	        for(int i=0;i<nums.length;i++){
+	            distinctSet.add(nums[i]);
+	            if(distinctSet.size() > 3)
+	                distinctSet.remove(Collections.min(distinctSet));
+	            
+	        }
+        if(distinctSet.size() >= 3)
+            return Collections.min(distinctSet);
+        else
+           return Collections.max(distinctSet);
+        
+    }
+}
